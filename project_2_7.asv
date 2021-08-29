@@ -1,2 +1,1 @@
 clear;close all;clc;
-load('data/hall.mat');
