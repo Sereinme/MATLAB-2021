@@ -1,0 +1,11 @@
+clear;close all;clc;
+load('data/hall.mat');
+load('data/JpegCoeff.mat');
+
+[DC, AC, height, width] = JpegEncode(hall_gray, QTAB, DCTAB, ACTAB);
+image = JpegDecode(DC, AC, height, width, 2 * QTAB, DCTAB, ACTAB);
+imwrite(image,'images/project_2_12_2QTAB.jpg');
+imshow(image);
+
+psnr = 10 * log10(255^2 / mse(image, hall_gray));
+fprintf("PSNR = %6.4fdB\n", psnr);

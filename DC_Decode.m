@@ -1,4 +1,4 @@
-function dc_coeff = DC_Decode(DC, coeff_length)
+function dc_coeff = DC_Decode(DC, DCTAB, coeff_length)
     %DC_Decode: decoding DC string
     %coeff_length: length of original dc coefficient
     %dc_coeff: output of original dc_coeff
@@ -8,30 +8,35 @@ function dc_coeff = DC_Decode(DC, coeff_length)
 
     for n = 1:coeff_length
 
-        if (dc_list(1) == 0 && dc_list(2) == 0)
-            dc_list(1:3) = [];
-        else
-            pointer = find(~dc_list, 1); % first 0
+        for a = 1:size(DCTAB, 1)
+            L = DCTAB(a, 1);
 
-            if pointer <= 3
-                category = bin2dec(num2str(dc_list(1:3), '%d')) - 1;
-                dc_list(1:3) = [];
-            else
-                category = pointer + 2;
-                dc_list(1:pointer) = [];
+            if L > length(dc_list)
+                continue;
             end
 
-            magnitude = dc_list(1:category);
-
-            if magnitude(1) == 1
-                dc_diff(n) = bin2dec(num2str(magnitude, '%d'));
-            else
-                dc_diff(n) = -bin2dec(num2str(~magnitude, '%d'));
+            if all(dc_list(1:L) == DCTAB(a, 2:L + 1))
+                category = a - 1;
+                dc_list(1:L) = [];
+                break;
             end
 
-            dc_list(1:category) = [];
         end
 
+        if category == 0
+            dc_list(1) = [];
+            continue;
+        end
+
+        magnitude = dc_list(1:category);
+
+        if magnitude(1) == 1
+            dc_diff(n) = bin2dec(num2str(magnitude, '%d'));
+        else
+            dc_diff(n) = -bin2dec(num2str(~magnitude, '%d'));
+        end
+
+        dc_list(1:category) = [];
     end
 
     for i = 2:coeff_length
@@ -39,4 +44,5 @@ function dc_coeff = DC_Decode(DC, coeff_length)
     end
 
     dc_coeff = dc_diff;
+
 end

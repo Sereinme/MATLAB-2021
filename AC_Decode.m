@@ -19,7 +19,7 @@ function ac_coeff = AC_Decode(AC, ACTAB, coeff_length)
             n = n + 1;
             index = 0;
             ac_list(1:4) = [];
-        elseif all(ac_list(1:11) == ZRL) && length(ac_list) > 11
+        elseif length(ac_list) > 11 && all(ac_list(1:11) == ZRL)
             index = index + 16;
             ac_list(1:11) = [];
         else
