@@ -15,3 +15,4 @@ title("L = 4");
 subplot(3, 1, 3);
 plot(face_vector_5);
 title("L = 5");
+saveas(gcf, 'images/project_4_1.jpg');
