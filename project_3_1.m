@@ -36,8 +36,8 @@ correct_rate_code = correct_code / info_length;
 fprintf("Correct rate after code = %f\n", correct_rate_code);
 
 % plot
-imwrite(uint8(hall_hide), 'images/project_3_1_hall_hide.jpg');
-imwrite(uint8(hall_code), 'images/project_3_1_hall_code.jpg');
+imwrite(uint8(hall_hide), 'images/3_1_hall_hide.jpg');
+imwrite(uint8(hall_code), 'images/3_1_hall_code.jpg');
 subplot(1, 3, 1);
 imshow(hall_gray);
 title('Original');

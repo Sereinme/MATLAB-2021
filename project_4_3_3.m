@@ -6,5 +6,5 @@ face_folder = 'data/Faces/';
 detect_window = [90, 60];
 epsilon = 0.6;
 image_detected = FaceDetect(image_adjust, face_folder, 4, detect_window, epsilon);
-imwrite(image_detected,'images/project_4_3_3.jpg');
+imwrite(image_detected,'images/4_3_3.jpg');
 imshow(image_detected);

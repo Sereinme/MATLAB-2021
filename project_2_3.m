@@ -26,7 +26,7 @@ end
 hall_normal_dct = hall_normal_dct + 128;
 subplot(2, 2, 2);
 imshow(uint8(hall_normal_dct));
-imwrite(uint8(hall_normal_dct), 'images/project_2_3_normal_dct.jpg');
+imwrite(uint8(hall_normal_dct), 'images/2_3_normal_dct.jpg');
 
 % Right 0
 hall_right0 = zeros(h, w);
@@ -44,7 +44,7 @@ end
 hall_right0 = hall_right0 + 128;
 subplot(2, 2, 3);
 imshow(uint8(hall_right0));
-imwrite(uint8(hall_right0), 'images/project_2_3_right0.jpg');
+imwrite(uint8(hall_right0), 'images/2_3_right0.jpg');
 
 % Left 0
 hall_left0 = zeros(h, w);
@@ -62,4 +62,4 @@ end
 hall_left0 = hall_left0 + 128;
 subplot(2, 2, 4);
 imshow(uint8(hall_left0));
-imwrite(uint8(hall_left0), 'images/project_2_3_left0.jpg');
+imwrite(uint8(hall_left0), 'images/2_3_left0.jpg');

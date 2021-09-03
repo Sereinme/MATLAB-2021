@@ -4,8 +4,8 @@ load('data/JpegCoeff.mat');
 
 [DC, AC, height, width] = JpegEncode(snow, QTAB ./ 2, DCTAB, ACTAB);
 image = JpegDecode(DC, AC, height, width, QTAB ./ 2, DCTAB, ACTAB);
-imwrite(snow, 'images/project_2_13_snow.jpg')
-imwrite(image, 'images/project_2_13_snow_pro.jpg');
+imwrite(snow, 'images/2_13_snow.jpg')
+imwrite(image, 'images/2_13_snow_pro.jpg');
 subplot(1, 2, 1);
 imshow(snow);
 title('Original');

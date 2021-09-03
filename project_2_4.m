@@ -27,7 +27,7 @@ end
 hall_transpose = hall_transpose + 128;
 subplot(2, 2, 2);
 imshow(uint8(hall_transpose));
-imwrite(uint8(hall_transpose), 'images/project_2_4_transpose.jpg');
+imwrite(uint8(hall_transpose), 'images/2_4_transpose.jpg');
 
 % Rotate 90
 hall_rot90 = zeros(h, w);
@@ -45,7 +45,7 @@ end
 hall_rot90 = hall_rot90 + 128;
 subplot(2, 2, 3);
 imshow(uint8(hall_rot90));
-imwrite(uint8(hall_rot90), 'images/project_2_4_rot90.jpg');
+imwrite(uint8(hall_rot90), 'images/2_4_rot90.jpg');
 
 % Rotate 180
 hall_rot180 = zeros(h, w);
@@ -63,4 +63,4 @@ end
 hall_rot180 = hall_rot180 + 128;
 subplot(2, 2, 4);
 imshow(uint8(hall_rot180));
-imwrite(uint8(hall_rot180), 'images/project_2_4_rot180.jpg');
+imwrite(uint8(hall_rot180), 'images/2_4_rot180.jpg');

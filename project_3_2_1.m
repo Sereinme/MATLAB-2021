@@ -64,7 +64,7 @@ correct_rate = correct / info_length;
 fprintf("Correct rate = %f\n", correct_rate);
 
 % plot
-imwrite(image, 'images/project_3_2_1.jpg');
+imwrite(image, 'images/3_2_1.jpg');
 subplot(1, 2, 1);
 imshow(hall_gray);
 title('Original');

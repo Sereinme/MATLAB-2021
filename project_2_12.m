@@ -4,7 +4,7 @@ load('data/JpegCoeff.mat');
 
 [DC, AC, height, width] = JpegEncode(hall_gray, QTAB ./ 2, DCTAB, ACTAB);
 image = JpegDecode(DC, AC, height, width, QTAB ./ 2, DCTAB, ACTAB);
-imwrite(image, 'images/project_2_12_2QTAB.jpg');
+imwrite(image, 'images/2_12_2QTAB.jpg');
 subplot(1, 2, 1);
 imshow(hall_gray);
 title('Original');
